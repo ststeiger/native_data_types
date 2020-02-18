@@ -6,12 +6,14 @@
     #include <cstdlib>
     #include <cstdint>
     #include <cstring>
+    #include <cinttypes>
 #else
     #include <stdio.h> // printf
     #include <stdlib.h> // for malloc
     #include <stdint.h> // for int32_t, int8_t, etc.
     #include <stdbool.h> // true, false in plain old C
     #include <string.h>  // for strlen, strcopy
+    #include <inttypes.h>  //
 #endif
 
 
@@ -21,7 +23,12 @@
 #if ( defined (__WIN32__) || defined (__WIN32) || defined (_WIN32) || defined (WIN32) || defined (__WIN64__) || defined (__WIN64) || defined (_WIN64) || defined (WIN64)  )
     #include <windows.h>
 #else
-    typedef int				 BOOL;
+
+// https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types
+
+
+
+    typedef int				   BOOL;
     typedef long int           LONG;
     typedef short int          SHORT;
     typedef char               CHAR;
@@ -69,21 +76,30 @@ int main()
     size_t b = sizeof(int);
     size_t c = sizeof(long);
     size_t d = sizeof(size_t);
+    size_t ddd = sizeof(FLOAT);
     size_t e = sizeof(WORD);
     size_t f = sizeof(DWORD);
+    size_t ff = sizeof(DWORD32);
+    size_t fff = sizeof(DWORD64);
+    size_t ffff = sizeof(DWORDLONG);
+
     size_t g = sizeof(LONG);
     size_t h = sizeof(LONGLONG);
     size_t i = sizeof(ULONGLONG);
     size_t j = sizeof(UCHAR);
     size_t k = sizeof(SHORT);
+    size_t gg = sizeof(HACCEL);
+    size_t ggg = sizeof(HALF_PTR);
 
+    // https://stackoverflow.com/questions/1403074/printf-with-sizeof-on-32-vs-64-platforms-how-do-i-handle-format-code-in-platfor
+    // "%zu" for size_t and "%zd" for ssize_t, I
 
-    printf("Bitness: %d\n", a*8);
+    printf("Bitness: %zu\n", a*8);
 
-    printf("void*: %d\n", a);
-    printf("int: %d\n", b);
-    printf("long: %d\n", c);
-    printf("size_t: %d\n", d);
+    printf("void*: %zu\n", a);
+    printf("int: %zu\n", b);
+    printf("long: %zu\n", c);
+    printf("size_t: %zu\n", d);
 
     return EXIT_SUCCESS;
 }

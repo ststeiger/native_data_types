@@ -76,20 +76,21 @@ int main()
     size_t b = sizeof(int);
     size_t c = sizeof(long);
     size_t d = sizeof(size_t);
-    size_t ddd = sizeof(FLOAT);
+    // size_t ddd = sizeof(FLOAT);
     size_t e = sizeof(WORD);
     size_t f = sizeof(DWORD);
-    size_t ff = sizeof(DWORD32);
-    size_t fff = sizeof(DWORD64);
-    size_t ffff = sizeof(DWORDLONG);
+    // size_t ff = sizeof(DWORD32);
+    // size_t fff = sizeof(DWORD64);
+    // size_t ffff = sizeof(DWORDLONG);
+
 
     size_t g = sizeof(LONG);
     size_t h = sizeof(LONGLONG);
     size_t i = sizeof(ULONGLONG);
     size_t j = sizeof(UCHAR);
     size_t k = sizeof(SHORT);
-    size_t gg = sizeof(HACCEL);
-    size_t ggg = sizeof(HALF_PTR);
+    // size_t gg = sizeof(HACCEL);
+    // size_t ggg = sizeof(HALF_PTR);
 
     // https://stackoverflow.com/questions/1403074/printf-with-sizeof-on-32-vs-64-platforms-how-do-i-handle-format-code-in-platfor
     // "%zu" for size_t and "%zd" for ssize_t, I
